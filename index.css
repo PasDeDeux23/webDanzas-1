@@ -267,16 +267,34 @@ footer p {
         text-align: center;
     }
     
+    /* CORREGIDO: Los dropdowns se mantienen ocultos por defecto en móvil */
     nav ul ul {
-        position: static;
-        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+        width: 90%;
+        max-width: 250px;
+        background: #654321;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-radius: 8px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        z-index: 1001;
+    }
+    
+    /* CORREGIDO: Solo se muestran al hacer hover/touch */
+    nav ul li:hover ul,
+    nav ul li:focus-within ul {
         opacity: 1;
         visibility: visible;
-        transform: none;
-        box-shadow: none;
-        background: rgba(101, 67, 33, 0.9);
-        border-radius: 0;
-        margin-top: 5px;
+        transform: translateX(-50%) translateY(0);
+    }
+    
+    /* Mejorar la interacción táctil en móvil */
+    nav > ul > li > a {
+        position: relative;
     }
     
     main {
@@ -328,6 +346,18 @@ footer p {
         padding: 12px 15px;
         font-size: 1em;
     }
+    
+    /* Ajustar el dropdown para pantallas muy pequeñas */
+    nav ul ul {
+        width: 95%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    
+    nav ul li:hover ul,
+    nav ul li:focus-within ul {
+        transform: translateX(-50%) translateY(0);
+    }
 }
 
 /* Animation for page load */
@@ -349,4 +379,26 @@ main {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Mejorar accesibilidad para dispositivos táctiles */
+@media (hover: none) and (pointer: coarse) {
+    nav ul li:hover ul {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    
+    nav ul li:focus-within ul {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
+    
+    nav > ul > li > a:focus + ul,
+    nav > ul > li > a:active + ul {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(-50%) translateY(0);
+    }
 }

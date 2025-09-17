@@ -1,0 +1,223 @@
+/* Reset y estilos base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f4e4bc 0%, #e8d5b7 50%, #d4c5a0 100%);
+    min-height: 100vh;
+}
+
+/* Título principal */
+h1 {
+    text-align: center;
+    color: #8b4513;
+    font-size: 3.5em;
+    margin: 40px 0 30px 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(to right, #ff6b35, #d4af37);
+    border-radius: 2px;
+}
+
+/* Contenedor padre */
+.Padre {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* Párrafo de visión */
+.Padre p {
+    font-size: 1.4em;
+    color: #555;
+    background: linear-gradient(135deg, #fff9e6, #f5f0e1);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+    border-left: 6px solid #d4af37;
+    text-align: justify;
+    line-height: 1.8;
+    position: relative;
+}
+footer {
+  background: #414d0073;   /* verde oscuro selva */
+  color: #fff;           /* texto blanco */
+  padding: 20px;
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.Padre p::before {
+    content: '•';
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    font-size: 2em;
+    opacity: 0.8;
+}
+
+/* Imagen */
+.Padre img {
+    max-width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    border: 5px solid #d4af37;
+}
+
+.Padre img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-color: #ff6b35;
+}
+
+/* Botón de regreso */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.back-button a {
+    display: inline-block;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #8b4513, #a0522d);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    border: 2px solid rgba(255,255,255,0.2);
+}
+
+.back-button a:hover {
+    background: linear-gradient(135deg, #a0522d, #8b4513);
+    color: #ffd700;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Padre {
+    animation: fadeInUp 1s ease-out;
+}
+
+h1 {
+    animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+        margin: 20px 0;
+        letter-spacing: 2px;
+    }
+    
+    .Padre {
+        margin: 20px;
+        padding: 25px 15px;
+    }
+    
+    .Padre p {
+        font-size: 1.2em;
+        padding: 25px;
+        text-align: justify;
+    }
+    
+    .Padre img {
+        height: 300px;
+        margin: 20px 0;
+    }
+    
+    .back-button {
+        position: static;
+        text-align: center;
+        margin: 20px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+        letter-spacing: 1px;
+    }
+    
+    .Padre p {
+        font-size: 1.1em;
+        padding: 20px;
+    }
+    
+    .Padre img {
+        height: 250px;
+    }
+    
+    .back-button a {
+        padding: 10px 18px;
+        font-size: 0.9em;
+    }
+}
+
+/* Efectos adicionales */
+.Padre::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ff6b35, #d4af37, #ff6b35);
+    border-radius: 22px;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.Padre:hover::before {
+    opacity: 0.3;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

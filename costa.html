@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Costa</title>
+    <link rel="stylesheet" href="costa.css">
+    
+</head>
+<body>
+    
+  
+        <h1>Danzas Tipicas de la Costa Peruana.</h1>
+        <p>La costa peruana es una región rica en tradiciones culturales, donde las danzas típicas reflejan la historia, costumbres y el mestizaje de su gente. Estas expresiones artísticas combinan ritmos afroperuanos, indígenas y españoles, dando lugar a manifestaciones llenas de energía y color.</p>
+    
+        
+
+  <div class="slideshow">
+    <img id="imagen" src="" alt="Foto actual">
+  </div>
+
+  <script>
+     const imagenes = [
+       "costa/Alcatraz.jpg",
+       "costa/Cachua.jpg",
+       "costa/Chuscada.jpg",
+       "costa/Cumanana.jpg",
+       "costa/Festejo.jpg",
+       "costa/Jarana.jpg",
+       "costa/Lando.jpg",
+       "costa/Marinera.jpg",
+       "costa/Zamacueca.jpg",
+       "costa/Zapateo costeño.jpg"
+  
+    ];
+
+    let indice = 0;
+    const img = document.getElementById("imagen");
+
+    function mostrarSiguienteFoto() {
+      // Cambiar la imagen con opacidad
+      img.style.opacity = 0;
+
+      setTimeout(() => {
+        img.src = imagenes[indice];
+        img.style.opacity = 1;
+
+        indice = (indice + 1) % imagenes.length; // volver al inicio al final
+      }, 500);
+    }
+
+    // Mostrar la primera imagen al cargar
+    mostrarSiguienteFoto();
+
+    // Cambiar imagen cada 3 segundos
+    setInterval(mostrarSiguienteFoto, 3000);
+  </script>
+  
+       
+
+        <footer>
+            <p>
+                Las danzas típicas de la costa reflejan la riqueza cultural y la mezcla de raíces indígenas, africanas y españolas. Entre las más representativas están el Festejo, alegre y rítmico, que celebra la identidad afroperuana; la Marinera, elegante y coqueta, símbolo del romance y la tradición; y la Tondero, con su influencia africana y española, que narra historias de amor y vida rural. Estas danzas expresan alegría, historia y diversidad de la región costera.
+            </p>
+
+        </footer>
+ 
+</body>
+</html>

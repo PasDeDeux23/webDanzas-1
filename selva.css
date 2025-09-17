@@ -1,0 +1,390 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Arial Black', 'Arial', sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(45deg, #0F4C3A, #2E7D32, #1B5E20, #0F4C3A);
+    background-size: 400% 400%;
+    animation: backgroundShift 8s ease infinite;
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Efectos decorativos de fondo */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(46, 255, 124, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(139, 195, 74, 0.08) 0%, transparent 30%),
+        radial-gradient(circle at 50% 50%, rgba(76, 175, 80, 0.05) 0%, transparent 40%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Contenedor principal */
+body {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título principal llamativo */
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    text-align: center;
+    color: #00FF7F;
+    margin-bottom: 2rem;
+    text-shadow: 
+        0 0 20px rgba(0, 255, 127, 0.5),
+        3px 3px 0px #004d1a,
+        6px 6px 0px #003d14;
+    font-weight: 900;
+    letter-spacing: 3px;
+    animation: titleGlow 1.5s ease-out;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* Párrafo con diseño llamativo */
+p {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+    text-align: justify;
+    color: #E8F5E8;
+    background: linear-gradient(135deg, 
+        rgba(46, 125, 50, 0.9) 0%, 
+        rgba(27, 94, 32, 0.95) 50%, 
+        rgba(13, 71, 24, 0.9) 100%);
+    border: 3px solid #4CAF50;
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 3rem;
+    box-shadow: 
+        0 10px 30px rgba(76, 175, 80, 0.3),
+        inset 0 1px 0 rgba(255,255,255,0.1),
+        0 0 0 1px rgba(76, 175, 80, 0.2);
+    animation: slideUp 1s ease-out 0.3s both;
+    line-height: 1.8;
+    font-weight: 500;
+}
+
+/* Contenedor del slideshow más impactante */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto 3rem auto;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 
+        0 20px 60px rgba(0,0,0,0.4),
+        0 0 0 4px #4CAF50,
+        0 0 0 8px rgba(76, 175, 80, 0.3),
+        inset 0 1px 0 rgba(255,255,255,0.1);
+    animation: zoomIn 1s ease-out 0.6s both;
+    background: linear-gradient(45deg, #2E7D32, #4CAF50);
+    transform: perspective(1000px) rotateX(2deg);
+}
+
+.slideshow::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        transparent 48%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 52%
+    );
+    background-size: 20px 20px;
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+/* Imagen del slideshow */
+#imagen {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border-radius: 25px;
+    filter: contrast(1.1) saturate(1.2);
+}
+
+#imagen:hover {
+    transform: scale(1.05);
+    filter: contrast(1.2) saturate(1.3) brightness(1.1);
+}
+
+/* Footer llamativo */
+footer {
+    background: linear-gradient(135deg, 
+        rgba(27, 94, 32, 0.95) 0%, 
+        rgba(46, 125, 50, 0.9) 50%, 
+        rgba(13, 71, 24, 0.95) 100%);
+    border: 3px solid #66BB6A;
+    border-radius: 25px;
+    padding: 2.5rem;
+    text-align: justify;
+    box-shadow: 
+        0 15px 50px rgba(102, 187, 106, 0.2),
+        inset 0 1px 0 rgba(255,255,255,0.1),
+        0 0 0 1px rgba(102, 187, 106, 0.2);
+    animation: slideUp 1s ease-out 0.9s both;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #4CAF50, #66BB6A, #81C784, #4CAF50);
+    background-size: 300% 300%;
+    border-radius: 27px;
+    z-index: -1;
+    animation: borderAnimation 3s ease infinite;
+}
+
+footer p {
+    color: #F1F8E9;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+    line-height: 1.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-weight: 500;
+}
+
+/* Animaciones llamativas pero estables */
+@keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes titleGlow {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.9);
+        text-shadow: 0 0 50px rgba(0, 255, 127, 0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        text-shadow: 
+            0 0 20px rgba(0, 255, 127, 0.5),
+            3px 3px 0px #004d1a,
+            6px 6px 0px #003d14;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: perspective(1000px) rotateX(10deg) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: perspective(1000px) rotateX(2deg) scale(1);
+    }
+}
+
+@keyframes borderAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Media Queries para responsividad */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 1.5rem 0.8rem;
+    }
+    
+    h1 {
+        margin-bottom: 1.5rem;
+        letter-spacing: 2px;
+    }
+    
+    p {
+        padding: 2rem;
+        margin-bottom: 2.5rem;
+        text-align: left;
+        border-radius: 18px;
+    }
+    
+    #imagen {
+        height: 320px;
+        border-radius: 20px;
+    }
+    
+    .slideshow {
+        margin-bottom: 2.5rem;
+        border-radius: 20px;
+        transform: perspective(1000px) rotateX(1deg);
+    }
+    
+    footer {
+        padding: 2rem;
+        border-radius: 20px;
+    }
+    
+    footer p {
+        text-align: left;
+    }
+}
+
+/* Móviles */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 1rem 0.6rem;
+    }
+    
+    h1 {
+        margin-bottom: 1rem;
+        letter-spacing: 1px;
+        text-transform: none;
+    }
+    
+    p {
+        padding: 1.8rem;
+        margin-bottom: 2rem;
+        border-radius: 15px;
+        text-align: left;
+    }
+    
+    #imagen {
+        height: 280px;
+        border-radius: 18px;
+    }
+    
+    .slideshow {
+        border-radius: 18px;
+        margin-bottom: 2rem;
+        transform: none;
+    }
+    
+    footer {
+        padding: 1.8rem;
+        border-radius: 18px;
+    }
+}
+
+/* Móviles pequeños */
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 14px;
+    }
+    
+    body {
+        padding: 0.8rem 0.4rem;
+    }
+    
+    p, footer p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+    
+    #imagen {
+        height: 240px;
+    }
+    
+    footer {
+        padding: 1.5rem;
+    }
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 1200px) {
+    body {
+        padding: 3rem 2rem;
+    }
+    
+    h1 {
+        margin-bottom: 3rem;
+        letter-spacing: 4px;
+    }
+    
+    p {
+        padding: 3rem;
+        margin-bottom: 4rem;
+        font-size: 1.5rem;
+    }
+    
+    #imagen {
+        height: 500px;
+    }
+    
+    .slideshow {
+        margin-bottom: 4rem;
+    }
+    
+    footer {
+        padding: 3rem;
+    }
+    
+    footer p {
+        font-size: 1.3rem;
+        line-height: 2;
+    }
+}
+
+/* Optimizaciones de rendimiento */
+.slideshow {
+    will-change: transform;
+}
+
+#imagen {
+    will-change: opacity, transform;
+}
+
+/* Mejoras para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .slideshow {
+        transform: none;
+    }
+}

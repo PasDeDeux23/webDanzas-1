@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selva</title>
+    <link rel="stylesheet" href="selva.css">
+    
+</head>
+<body>
+    
+  
+        <h1>Danzas Tipicas de la Selva Peruana.</h1>
+        <p>Las danzas de la selva peruana están impregnadas de la naturaleza y las costumbres indígenas amazónicas. La Danza del Mono imita con gracia los movimientos de los animales selváticos, mientras que la Danza de los Macheteros refleja la fuerza y el trabajo diario. También sobresale la Danza de los Tsachilas, con raíces en rituales ancestrales. Estas manifestaciones artísticas expresan la conexión espiritual y la vida tradicional de las comunidades amazónicas.</p>
+        
+
+  <div class="slideshow">
+    <img id="imagen" src="" alt="Foto actual">
+  </div>
+
+  <script>
+     const imagenes = [
+       "selva/Anaconda.jpg",
+       "selva/Baile de la Caza (Cazador).jpg",
+       "selva/Changanacuy.jpg",
+       "selva/Danza de la Chonta.jpg",
+       "selva/Danza del Ayahuasca.jpg",
+       "selva/Danza del Otorongo.jpg",
+       "selva/Danza del Pijuayo.jpg",
+       "selva/Pandilla Amazónica.jpg",
+       "selva/Shapis.jpg",
+       "selva/Yanesha.jpg"
+  
+    ];
+
+    let indice = 0;
+    const img = document.getElementById("imagen");
+
+    function mostrarSiguienteFoto() {
+      // Cambiar la imagen con opacidad
+      img.style.opacity = 0;
+
+      setTimeout(() => {
+        img.src = imagenes[indice];
+        img.style.opacity = 1;
+
+        indice = (indice + 1) % imagenes.length; // volver al inicio al final
+      }, 500);
+    }
+
+    // Mostrar la primera imagen al cargar
+    mostrarSiguienteFoto();
+
+    // Cambiar imagen cada 3 segundos
+    setInterval(mostrarSiguienteFoto, 3000);
+  </script>
+  
+       
+
+    
+        <footer>
+            <p>
+                Las danzas típicas de la selva peruana reflejan la conexión con la naturaleza y las tradiciones indígenas amazónicas. Destacan la Danza de los Tsachilas, que representa rituales ancestrales, y la Danza del Mono, que imita los movimientos de los animales selváticos. También está la Danza de los Macheteros, que simboliza la lucha y el trabajo en la selva. Estas expresiones artísticas muestran la espiritualidad, la cosmovisión y la vida cotidiana de las comunidades amazónicas.
+            </p>
+
+        </footer>
+    
+</body>
+</html>

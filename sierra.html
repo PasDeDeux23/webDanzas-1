@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sierra</title>
+    <link rel="stylesheet" href="sierra.css">
+    
+</head>
+<body>
+    
+  
+<h1>Danzas Típicas de la Sierra Peruana.</h1>
+<p>En la sierra peruana, las danzas reflejan la fuerte herencia andina y tradiciones ancestrales. La Diablada representa la lucha entre el bien y el mal con personajes coloridos. El Huayno es una expresión musical y de baile que habla del amor y la vida cotidiana. También destaca el Carnaval de Puno, lleno de energía y simbolismo. Estas danzas muestran la espiritualidad, cultura y el sentir profundo de las comunidades andinas.</p>
+
+
+  <div class="slideshow">
+    <img id="imagen" src="" alt="Foto actual">
+  </div>
+
+  <script>
+     const imagenes = [
+       "sierra/Carnaval de Cajamarca.jpg",
+       "sierra/Carnaval de Huancavelica.jpg",
+       "sierra/Ch’unchu.jpg",
+       "sierra/Danza de la Resistencia.jpg",
+       "sierra/Danza de las Tijeras.jpg",
+       "sierra/Huaylas.jpg",
+       "sierra/Qolla (o Q’olla).jpg",
+       "sierra/Sikuri.jpg",
+       "sierra/Tondero Serrano.jpg",
+       "sierra/Wititi.jpg"
+  
+    ];
+
+    let indice = 0;
+    const img = document.getElementById("imagen");
+
+    function mostrarSiguienteFoto() {
+      // Cambiar la imagen con opacidad
+      img.style.opacity = 0;
+
+      setTimeout(() => {
+        img.src = imagenes[indice];
+        img.style.opacity = 1;
+
+        indice = (indice + 1) % imagenes.length; // volver al inicio al final
+      }, 500);
+    }
+
+    // Mostrar la primera imagen al cargar
+    mostrarSiguienteFoto();
+
+    // Cambiar imagen cada 3 segundos
+    setInterval(mostrarSiguienteFoto, 3000);
+  </script>
+  
+       
+</div>
+    
+        <footer>
+            <p>
+                Las danzas típicas de la sierra reflejan la riqueza cultural andina, con fuerte influencia indígena y colonial. Destacan el Huayno, ritmo alegre que expresa amor y costumbres; la Diablada, con personajes que representan la lucha entre el bien y el mal; y el Carnaval de Puno, con coloridos disfraces y tradiciones ancestrales. También está la Marinera Serrana, que muestra elegancia y romanticismo. Estas danzas simbolizan la identidad, espiritualidad y la historia de las comunidades andinas.
+            </p>
+
+        </footer>
+    
+</body>
+</html>

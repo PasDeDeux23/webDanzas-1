@@ -1,0 +1,352 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #f4e4bc 0%, #e8d5b7 50%, #d4c5a0 100%);
+    min-height: 100vh;
+}
+
+/* Header and Navigation */
+header {
+    background: linear-gradient(135deg, #8b4513, #a0522d);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0;
+}
+
+nav > ul > li {
+    position: relative;
+    margin: 0 5px;
+}
+
+nav a {
+    display: block;
+    padding: 18px 25px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+nav > ul > li > a:hover {
+    background: rgba(255,255,255,0.2);
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* Dropdown menu */
+nav ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 200px;
+    background: #654321;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+nav ul li:hover ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+nav ul ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav ul ul li:last-child {
+    border-bottom: none;
+}
+
+nav ul ul a {
+    padding: 12px 20px;
+    font-size: 0.95em;
+    color: #fff;
+}
+
+nav ul ul a:hover {
+    background: rgba(255,255,255,0.15);
+    color: #ffd700;
+    transform: none;
+}
+
+/* Main content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background: rgba(255,255,255,0.95);
+    margin-top: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #8b4513;
+    font-size: 2.8em;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    border-bottom: 3px solid #d4af37;
+    padding-bottom: 15px;
+    position: relative;
+}
+
+h1::after {
+    content: '';
+    position: absolute;
+    bottom: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(to right, #ff6b35, #d4af37);
+}
+
+/* Image container */
+main > div:first-of-type {
+    text-align: center;
+    margin: 30px 0;
+}
+
+main img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+main img:hover {
+    transform: scale(1.05);
+}
+
+/* Paragraph styling */
+main > p {
+    font-size: 1.2em;
+    text-align: justify;
+    color: #555;
+    background: linear-gradient(135deg, #fff9e6, #f5f0e1);
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+    margin: 30px 0;
+    border-left: 5px solid #d4af37;
+    line-height: 1.8;
+}
+
+/* Dance sections */
+main ul {
+    list-style: none;
+    padding: 0;
+}
+
+h2 {
+    color: #8b4513;
+    font-size: 1.8em;
+    margin: 35px 0 15px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #ffd700, #ffed4a);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-left: 6px solid #ff6b35;
+    position: relative;
+    overflow: hidden;
+}
+
+h2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.3) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+h2:hover::before {
+    transform: translateX(100%);
+}
+
+main li {
+    background: #fff;
+    margin: 8px 0;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    border-left: 4px solid #ff6b35;
+    font-size: 1.1em;
+    color: #666;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+main li::before {
+    content: '->';
+    position: absolute;
+    left: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2em;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+main li:hover {
+    transform: translateX(10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background: linear-gradient(135deg, #fff, #fafafa);
+    border-left-color: #d4af37;
+}
+
+main li:hover::before {
+    opacity: 1;
+    left: 8px;
+}
+
+/* Break styling */
+br {
+    margin: 20px 0;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(135deg, #654321, #8b4513);
+    color: #fff;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+    border-radius: 10px;
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.2);
+}
+
+footer p {
+    font-size: 1.1em;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav > ul > li {
+        margin: 2px 0;
+        width: 100%;
+        text-align: center;
+    }
+    
+    nav ul ul {
+        position: static;
+        width: 100%;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: rgba(101, 67, 33, 0.9);
+        border-radius: 0;
+        margin-top: 5px;
+    }
+    
+    main {
+        margin: 10px;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    main > p {
+        font-size: 1.1em;
+        padding: 20px;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+        padding: 12px 15px;
+    }
+    
+    main li {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    main > p {
+        font-size: 1em;
+        padding: 15px;
+    }
+    
+    h2 {
+        font-size: 1.3em;
+        padding: 10px 12px;
+    }
+    
+    main li {
+        padding: 10px 15px;
+        font-size: 0.95em;
+    }
+    
+    nav a {
+        padding: 12px 15px;
+        font-size: 1em;
+    }
+}
+
+/* Animation for page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}

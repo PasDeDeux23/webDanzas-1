@@ -1,0 +1,291 @@
+/* Reset y configuración base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Contenedor principal */
+body {
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Título principal */
+h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 700;
+    letter-spacing: 1px;
+    animation: fadeInDown 1s ease-out;
+}
+
+/* Párrafo introductorio */
+p {
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    text-align: justify;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease-out 0.3s both;
+    line-height: 1.8;
+}
+
+/* Contenedor del slideshow */
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    animation: slideIn 1s ease-out 0.6s both;
+}
+
+/* Imagen del slideshow */
+#imagen {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s ease-in-out, transform 0.3s ease;
+    border-radius: 20px;
+}
+
+#imagen:hover {
+    transform: scale(1.02);
+}
+
+
+
+/* Footer */
+footer {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: justify;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    animation: fadeInUp 1s ease-out 0.9s both;
+}
+
+footer p {
+    color: #fff;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: clamp(1rem, 2.2vw, 1.1rem);
+    line-height: 1.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Animaciones */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+/* Media Queries para responsividad */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 1.5rem 0.8rem;
+    }
+    
+    h1 {
+        margin-bottom: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+    
+    p {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        text-align: left;
+    }
+    
+    #imagen {
+        height: 300px;
+    }
+    
+    .slideshow {
+        margin-bottom: 2rem;
+        border-radius: 15px;
+    }
+    
+    footer {
+        padding: 2rem;
+        border-radius: 15px;
+    }
+    
+    footer p {
+        text-align: left;
+    }
+}
+
+/* Móviles */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+    
+    h1 {
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+    
+    p {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+        border-radius: 12px;
+        text-align: left;
+    }
+    
+    #imagen {
+        height: 250px;
+        border-radius: 12px;
+    }
+    
+    .slideshow {
+        border-radius: 12px;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+    
+    footer {
+        padding: 1.5rem;
+        border-radius: 12px;
+    }
+    
+    footer p {
+        text-align: left;
+        line-height: 1.7;
+    }
+}
+
+/* Pantallas muy pequeñas */
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 14px;
+    }
+    
+    body {
+        padding: 0.8rem 0.3rem;
+    }
+    
+    p, footer p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    
+    #imagen {
+        height: 200px;
+    }
+}
+
+/* Pantallas grandes */
+@media screen and (min-width: 1200px) {
+    body {
+        padding: 3rem 2rem;
+    }
+    
+    h1 {
+        margin-bottom: 3rem;
+    }
+    
+    p {
+        padding: 3rem;
+        margin-bottom: 4rem;
+        font-size: 1.25rem;
+    }
+    
+    #imagen {
+        height: 500px;
+    }
+    
+    .slideshow {
+        margin-bottom: 4rem;
+    }
+    
+    footer {
+        padding: 3rem;
+    }
+    
+    footer p {
+        font-size: 1.15rem;
+    }
+}
+
+/* Optimizaciones de rendimiento */
+.slideshow {
+    will-change: transform;
+}
+
+#imagen {
+    will-change: opacity, transform;
+}
+
+/* Mejoras para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
